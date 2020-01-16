@@ -1,0 +1,2000 @@
+openapi: 3.0.2
+info:
+  title: PokeAPI
+  version: '0.9.0'
+paths:
+  '/api/v2/item/{itemId}':
+    get:
+      operationId: request_MvGtHcDpzU
+      summary: Fetch an Item
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - attributes
+                  - baby_trigger_for
+                  - category
+                  - cost
+                  - effect_entries
+                  - flavor_text_entries
+                  - fling_effect
+                  - fling_power
+                  - game_indices
+                  - held_by_pokemon
+                  - id
+                  - machines
+                  - name
+                  - names
+                  - sprites
+                properties:
+                  baby_trigger_for: {}
+                  name:
+                    type: string
+                  game_indices:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - game_index
+                        - generation
+                      properties:
+                        game_index:
+                          type: number
+                        generation:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  flavor_text_entries:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - text
+                        - version_group
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        text:
+                          type: string
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  fling_effect: {}
+                  held_by_pokemon:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - pokemon
+                        - version_details
+                      properties:
+                        pokemon:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        version_details:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - rarity
+                              - version
+                            properties:
+                              rarity:
+                                type: number
+                              version:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                  effect_entries:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - effect
+                        - language
+                        - short_effect
+                      properties:
+                        effect:
+                          type: string
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        short_effect:
+                          type: string
+                  attributes:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - name
+                        - url
+                      properties:
+                        name:
+                          type: string
+                        url:
+                          type: string
+                  machines:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - machine
+                        - version_group
+                      properties:
+                        machine:
+                          type: object
+                          required:
+                            - url
+                          properties:
+                            url:
+                              type: string
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  id:
+                    type: number
+                  cost:
+                    type: number
+                  fling_power: {}
+                  category:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  sprites:
+                    type: object
+                    required:
+                      - default
+                    properties:
+                      default:
+                        type: string
+          description: ''
+    parameters:
+      - in: path
+        name: itemId
+        required: true
+        schema:
+          type: string
+  '/api/v2/ability/{id}':
+    get:
+      operationId: request_OYeACTJAdo
+      summary: Fetch an Ability
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - effect_changes
+                  - effect_entries
+                  - flavor_text_entries
+                  - generation
+                  - id
+                  - is_main_series
+                  - name
+                  - names
+                  - pokemon
+                properties:
+                  name:
+                    type: string
+                  generation:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  flavor_text_entries:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - flavor_text
+                        - language
+                        - version_group
+                      properties:
+                        flavor_text:
+                          type: string
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  effect_entries:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - effect
+                        - language
+                        - short_effect
+                      properties:
+                        effect:
+                          type: string
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        short_effect:
+                          type: string
+                  effect_changes:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - effect_entries
+                        - version_group
+                      properties:
+                        effect_entries:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - effect
+                              - language
+                            properties:
+                              effect:
+                                type: string
+                              language:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  id:
+                    type: number
+                  is_main_series:
+                    type: boolean
+                  pokemon:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - is_hidden
+                        - pokemon
+                        - slot
+                      properties:
+                        is_hidden:
+                          type: boolean
+                        pokemon:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        slot:
+                          type: number
+          description: ''
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+  '/api/v2/move-ailment/{moveAilmentId}':
+    get:
+      operationId: request_aMRtOQGQCS
+      summary: Fetch a Move Ailment
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - id
+                  - moves
+                  - name
+                  - names
+                properties:
+                  id:
+                    type: number
+                  moves:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - name
+                        - url
+                      properties:
+                        name:
+                          type: string
+                        url:
+                          type: string
+                  name:
+                    type: string
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+          description: ''
+    parameters:
+      - in: path
+        name: moveAilmentId
+        required: true
+        schema:
+          type: string
+  /api/v2:
+    get:
+      operationId: request_xr6c6xnTc0
+      summary: Home
+      responses:
+        '301':
+          content:
+            '*/*':
+              schema:
+                type: string
+          description: ''
+    parameters: []
+  '/api/v2/machine/{machineId}':
+    get:
+      operationId: request_BSFhzXeEB3
+      summary: Fetch a Machine
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - id
+                  - item
+                  - move
+                  - version_group
+                properties:
+                  id:
+                    type: number
+                  item:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  move:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  version_group:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+          description: ''
+    parameters:
+      - in: path
+        name: machineId
+        required: true
+        schema:
+          type: string
+  '/api/v2/pokemon-form/{pokemonFormId}':
+    get:
+      operationId: request_fSd4lTrUL9
+      summary: Fetch a Pokemon Form
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - form_name
+                  - form_names
+                  - form_order
+                  - id
+                  - is_battle_only
+                  - is_default
+                  - is_mega
+                  - name
+                  - names
+                  - order
+                  - pokemon
+                  - sprites
+                  - version_group
+                properties:
+                  is_mega:
+                    type: boolean
+                  form_order:
+                    type: number
+                  name:
+                    type: string
+                  form_name:
+                    type: string
+                  is_default:
+                    type: boolean
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  form_names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  id:
+                    type: number
+                  order:
+                    type: number
+                  pokemon:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  is_battle_only:
+                    type: boolean
+                  sprites:
+                    type: object
+                    required:
+                      - back_default
+                      - back_shiny
+                      - front_default
+                      - front_shiny
+                    properties:
+                      back_default: {}
+                      back_shiny: {}
+                      front_default: {}
+                      front_shiny: {}
+                  version_group:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+          description: ''
+    parameters:
+      - in: path
+        name: pokemonFormId
+        required: true
+        schema:
+          type: string
+  '/api/v2/characteristic/{characteristicId}':
+    get:
+      operationId: request_z9QQ6lV3Vx
+      summary: Fetch a Characteristic
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - descriptions
+                  - gene_modulo
+                  - highest_stat
+                  - id
+                  - possible_values
+                properties:
+                  possible_values:
+                    type: array
+                    items:
+                      type: number
+                  gene_modulo:
+                    type: number
+                  id:
+                    type: number
+                  highest_stat:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  descriptions:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - description
+                        - language
+                      properties:
+                        description:
+                          type: string
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+          description: ''
+    parameters:
+      - in: path
+        name: characteristicId
+        required: true
+        schema:
+          type: string
+  '/api/v2/location/{locationId}':
+    get:
+      operationId: request_K52immGyKM
+      summary: Fetch a Location
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - areas
+                  - game_indices
+                  - id
+                  - name
+                  - names
+                  - region
+                properties:
+                  name:
+                    type: string
+                  game_indices:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - game_index
+                        - generation
+                      properties:
+                        game_index:
+                          type: number
+                        generation:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  id:
+                    type: number
+                  region:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  areas:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - name
+                        - url
+                      properties:
+                        name:
+                          type: string
+                        url:
+                          type: string
+          description: ''
+    parameters:
+      - in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+  '/api/v2/pokemon/{pokemonId}':
+    get:
+      operationId: request_Cgdl9SN8nm
+      summary: Fetch a Pokemon
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - abilities
+                  - base_experience
+                  - forms
+                  - game_indices
+                  - height
+                  - held_items
+                  - id
+                  - is_default
+                  - location_area_encounters
+                  - moves
+                  - name
+                  - order
+                  - species
+                  - sprites
+                  - stats
+                  - types
+                  - weight
+                properties:
+                  species:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  weight:
+                    type: number
+                  name:
+                    type: string
+                  stats:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - base_stat
+                        - effort
+                        - stat
+                      properties:
+                        base_stat:
+                          type: number
+                        effort:
+                          type: number
+                        stat:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  is_default:
+                    type: boolean
+                  game_indices:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - game_index
+                        - version
+                      properties:
+                        game_index:
+                          type: number
+                        version:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  moves:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - move
+                        - version_group_details
+                      properties:
+                        move:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        version_group_details:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - level_learned_at
+                              - move_learn_method
+                              - version_group
+                            properties:
+                              level_learned_at:
+                                type: number
+                              move_learn_method:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                              version_group:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                  height:
+                    type: number
+                  abilities:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - ability
+                        - is_hidden
+                        - slot
+                      properties:
+                        ability:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        is_hidden:
+                          type: boolean
+                        slot:
+                          type: number
+                  base_experience:
+                    type: number
+                  id:
+                    type: number
+                  order:
+                    type: number
+                  forms:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - name
+                        - url
+                      properties:
+                        name:
+                          type: string
+                        url:
+                          type: string
+                  held_items:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - item
+                        - version_details
+                      properties:
+                        item:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        version_details:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - rarity
+                              - version
+                            properties:
+                              rarity:
+                                type: number
+                              version:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                  types:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - slot
+                        - type
+                      properties:
+                        slot:
+                          type: number
+                        type:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  location_area_encounters:
+                    type: string
+                  sprites:
+                    type: object
+                    required:
+                      - back_default
+                      - back_female
+                      - back_shiny
+                      - back_shiny_female
+                      - front_default
+                      - front_female
+                      - front_shiny
+                      - front_shiny_female
+                    properties:
+                      back_shiny_female: {}
+                      front_shiny: {}
+                      front_female: {}
+                      back_female: {}
+                      back_shiny: {}
+                      front_default: {}
+                      front_shiny_female: {}
+                      back_default: {}
+          description: ''
+    parameters:
+      - in: path
+        name: pokemonId
+        required: true
+        schema:
+          type: string
+  '/api/v2/location-area/{locationAreaId}':
+    get:
+      operationId: request_ErPLng2WFv
+      summary: Fetch a Location Area
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - encounter_method_rates
+                  - game_index
+                  - id
+                  - location
+                  - name
+                  - names
+                  - pokemon_encounters
+                properties:
+                  name:
+                    type: string
+                  location:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  game_index:
+                    type: number
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  id:
+                    type: number
+                  pokemon_encounters:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - pokemon
+                        - version_details
+                      properties:
+                        pokemon:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        version_details:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - encounter_details
+                              - max_chance
+                              - version
+                            properties:
+                              encounter_details:
+                                type: array
+                                items:
+                                  type: object
+                                  required:
+                                    - chance
+                                    - condition_values
+                                    - max_level
+                                    - method
+                                    - min_level
+                                  properties:
+                                    min_level:
+                                      type: number
+                                    method:
+                                      type: object
+                                      required:
+                                        - name
+                                        - url
+                                      properties:
+                                        name:
+                                          type: string
+                                        url:
+                                          type: string
+                                    chance:
+                                      type: number
+                                    condition_values:
+                                      type: array
+                                      items:
+                                        type: object
+                                        required:
+                                          - name
+                                          - url
+                                        properties:
+                                          name:
+                                            type: string
+                                          url:
+                                            type: string
+                                    max_level:
+                                      type: number
+                              max_chance:
+                                type: number
+                              version:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                  encounter_method_rates:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - encounter_method
+                        - version_details
+                      properties:
+                        encounter_method:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        version_details:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - rate
+                              - version
+                            properties:
+                              rate:
+                                type: number
+                              version:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+          description: ''
+    parameters:
+      - in: path
+        name: locationAreaId
+        required: true
+        schema:
+          type: string
+  '/api/v2/berry/{berryId}':
+    get:
+      operationId: request_nEJAYio8vS
+      summary: Fetch a Berry
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - firmness
+                  - flavors
+                  - growth_time
+                  - id
+                  - item
+                  - max_harvest
+                  - name
+                  - natural_gift_power
+                  - natural_gift_type
+                  - size
+                  - smoothness
+                  - soil_dryness
+                properties:
+                  soil_dryness:
+                    type: number
+                  name:
+                    type: string
+                  size:
+                    type: number
+                  growth_time:
+                    type: number
+                  natural_gift_power:
+                    type: number
+                  flavors:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - flavor
+                        - potency
+                      properties:
+                        flavor:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        potency:
+                          type: number
+                  id:
+                    type: number
+                  smoothness:
+                    type: number
+                  max_harvest:
+                    type: number
+                  firmness:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  natural_gift_type:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  item:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+          description: ''
+    parameters:
+      - in: path
+        name: berryId
+        required: true
+        schema:
+          type: string
+  '/api/v2/move/{moveId}':
+    get:
+      operationId: request_egbJBcp0uy
+      summary: Fetch a Move
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - accuracy
+                  - contest_combos
+                  - contest_effect
+                  - contest_type
+                  - damage_class
+                  - effect_chance
+                  - effect_changes
+                  - effect_entries
+                  - flavor_text_entries
+                  - generation
+                  - id
+                  - machines
+                  - meta
+                  - name
+                  - names
+                  - past_values
+                  - power
+                  - pp
+                  - priority
+                  - stat_changes
+                  - super_contest_effect
+                  - target
+                  - type
+                properties:
+                  name:
+                    type: string
+                  super_contest_effect: {}
+                  priority:
+                    type: number
+                  generation:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  flavor_text_entries:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - flavor_text
+                        - language
+                        - version_group
+                      properties:
+                        flavor_text:
+                          type: string
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  accuracy: {}
+                  effect_entries:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - effect
+                        - language
+                        - short_effect
+                      properties:
+                        effect:
+                          type: string
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        short_effect:
+                          type: string
+                  machines:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - machine
+                        - version_group
+                      properties:
+                        machine:
+                          type: object
+                          required:
+                            - url
+                          properties:
+                            url:
+                              type: string
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  contest_type: {}
+                  past_values:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - accuracy
+                        - effect_chance
+                        - effect_entries
+                        - power
+                        - pp
+                        - type
+                        - version_group
+                      properties:
+                        accuracy: {}
+                        effect_entries:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - effect
+                              - language
+                              - short_effect
+                            properties:
+                              effect:
+                                type: string
+                              language:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                              short_effect:
+                                type: string
+                        pp: {}
+                        power: {}
+                        type: {}
+                        effect_chance: {}
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  effect_changes:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - effect_entries
+                        - version_group
+                      properties:
+                        effect_entries:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - effect
+                              - language
+                            properties:
+                              effect:
+                                type: string
+                              language:
+                                type: object
+                                required:
+                                  - name
+                                  - url
+                                properties:
+                                  name:
+                                    type: string
+                                  url:
+                                    type: string
+                        version_group:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                  id:
+                    type: number
+                  meta: {}
+                  contest_combos: {}
+                  damage_class:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  contest_effect: {}
+                  target:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  pp: {}
+                  power: {}
+                  type:
+                    type: object
+                    required:
+                      - name
+                      - url
+                    properties:
+                      name:
+                        type: string
+                      url:
+                        type: string
+                  effect_chance: {}
+                  stat_changes:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - change
+                        - stat
+                      properties:
+                        change:
+                          type: number
+                        stat:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+          description: ''
+    parameters:
+      - in: path
+        name: moveId
+        required: true
+        schema:
+          type: string
+  '/api/v2/egg-group/{eggGroupId}':
+    get:
+      operationId: request_QsGf5wqyCE
+      summary: Fetch an Egg Group
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - id
+                  - name
+                  - names
+                  - pokemon_species
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  names:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - language
+                        - name
+                      properties:
+                        language:
+                          type: object
+                          required:
+                            - name
+                            - url
+                          properties:
+                            name:
+                              type: string
+                            url:
+                              type: string
+                        name:
+                          type: string
+                  pokemon_species:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - name
+                        - url
+                      properties:
+                        name:
+                          type: string
+                        url:
+                          type: string
+          description: ''
+    parameters:
+      - in: path
+        name: eggGroupId
+        required: true
+        schema:
+          type: string
+  '/api/v2/evolution-chain/{id}':
+    get:
+      operationId: request_SwhYgIjF8y
+      summary: Fetch Resource
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                required:
+                  - baby_trigger_item
+                  - chain
+                  - id
+                properties:
+                  baby_trigger_item: {}
+                  chain:
+                    type: object
+                    required:
+                      - evolution_details
+                      - evolves_to
+                      - is_baby
+                      - species
+                    properties:
+                      evolution_details:
+                        type: array
+                        items: {}
+                      evolves_to:
+                        type: array
+                        items:
+                          type: object
+                          required:
+                            - evolution_details
+                            - evolves_to
+                            - is_baby
+                            - species
+                          properties:
+                            evolution_details:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - gender
+                                  - held_item
+                                  - item
+                                  - known_move
+                                  - known_move_type
+                                  - location
+                                  - min_affection
+                                  - min_beauty
+                                  - min_happiness
+                                  - min_level
+                                  - needs_overworld_rain
+                                  - party_species
+                                  - party_type
+                                  - relative_physical_stats
+                                  - time_of_day
+                                  - trade_species
+                                  - trigger
+                                  - turn_upside_down
+                                properties:
+                                  party_type: {}
+                                  min_level: {}
+                                  location: {}
+                                  turn_upside_down:
+                                    type: boolean
+                                  party_species: {}
+                                  min_happiness: {}
+                                  held_item: {}
+                                  needs_overworld_rain:
+                                    type: boolean
+                                  min_affection: {}
+                                  trade_species: {}
+                                  min_beauty: {}
+                                  known_move_type: {}
+                                  relative_physical_stats: {}
+                                  time_of_day:
+                                    type: string
+                                  known_move: {}
+                                  gender: {}
+                                  item: {}
+                                  trigger:
+                                    type: object
+                                    required:
+                                      - name
+                                      - url
+                                    properties:
+                                      name:
+                                        type: string
+                                      url:
+                                        type: string
+                            evolves_to:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - evolution_details
+                                  - evolves_to
+                                  - is_baby
+                                  - species
+                                properties:
+                                  evolution_details:
+                                    type: array
+                                    items:
+                                      type: object
+                                      required:
+                                        - gender
+                                        - held_item
+                                        - item
+                                        - known_move
+                                        - known_move_type
+                                        - location
+                                        - min_affection
+                                        - min_beauty
+                                        - min_happiness
+                                        - min_level
+                                        - needs_overworld_rain
+                                        - party_species
+                                        - party_type
+                                        - relative_physical_stats
+                                        - time_of_day
+                                        - trade_species
+                                        - trigger
+                                        - turn_upside_down
+                                      properties:
+                                        party_type: {}
+                                        min_level: {}
+                                        location: {}
+                                        turn_upside_down:
+                                          type: boolean
+                                        party_species: {}
+                                        min_happiness: {}
+                                        held_item: {}
+                                        needs_overworld_rain:
+                                          type: boolean
+                                        min_affection: {}
+                                        trade_species: {}
+                                        min_beauty: {}
+                                        known_move_type: {}
+                                        relative_physical_stats: {}
+                                        time_of_day:
+                                          type: string
+                                        known_move: {}
+                                        gender: {}
+                                        item: {}
+                                        trigger:
+                                          type: object
+                                          required:
+                                            - name
+                                            - url
+                                          properties:
+                                            name:
+                                              type: string
+                                            url:
+                                              type: string
+                                  evolves_to:
+                                    type: array
+                                    items:
+                                      type: object
+                                      required:
+                                        - evolution_details
+                                        - evolves_to
+                                        - is_baby
+                                        - species
+                                      properties:
+                                        evolution_details:
+                                          type: array
+                                          items:
+                                            type: object
+                                            required:
+                                              - gender
+                                              - held_item
+                                              - item
+                                              - known_move
+                                              - known_move_type
+                                              - location
+                                              - min_affection
+                                              - min_beauty
+                                              - min_happiness
+                                              - min_level
+                                              - needs_overworld_rain
+                                              - party_species
+                                              - party_type
+                                              - relative_physical_stats
+                                              - time_of_day
+                                              - trade_species
+                                              - trigger
+                                              - turn_upside_down
+                                            properties:
+                                              party_type: {}
+                                              min_level:
+                                                type: number
+                                              location: {}
+                                              turn_upside_down:
+                                                type: boolean
+                                              party_species: {}
+                                              min_happiness: {}
+                                              held_item: {}
+                                              needs_overworld_rain:
+                                                type: boolean
+                                              min_affection: {}
+                                              trade_species: {}
+                                              min_beauty: {}
+                                              known_move_type: {}
+                                              relative_physical_stats: {}
+                                              time_of_day:
+                                                type: string
+                                              known_move: {}
+                                              gender: {}
+                                              item: {}
+                                              trigger:
+                                                type: object
+                                                required:
+                                                  - name
+                                                  - url
+                                                properties:
+                                                  name:
+                                                    type: string
+                                                  url:
+                                                    type: string
+                                        evolves_to:
+                                          type: array
+                                          items: {}
+                                        is_baby:
+                                          type: boolean
+                                        species:
+                                          type: object
+                                          required:
+                                            - name
+                                            - url
+                                          properties:
+                                            name:
+                                              type: string
+                                            url:
+                                              type: string
+                                  is_baby:
+                                    type: boolean
+                                  species:
+                                    type: object
+                                    required:
+                                      - name
+                                      - url
+                                    properties:
+                                      name:
+                                        type: string
+                                      url:
+                                        type: string
+                            is_baby:
+                              type: boolean
+                            species:
+                              type: object
+                              required:
+                                - name
+                                - url
+                              properties:
+                                name:
+                                  type: string
+                                url:
+                                  type: string
+                      is_baby:
+                        type: boolean
+                      species:
+                        type: object
+                        required:
+                          - name
+                          - url
+                        properties:
+                          name:
+                            type: string
+                          url:
+                            type: string
+                  id:
+                    type: number
+          description: ''
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+components:
+  schemas: {}
