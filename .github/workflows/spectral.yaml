@@ -13,3 +13,5 @@ jobs:
 
       # Run Spectral
       - uses: stoplightio/spectral-action@master
+        with:
+          file_glob: '**/openapi.yaml'
