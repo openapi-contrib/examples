@@ -1,11 +1,17 @@
 openapi: 3.0.3
 
+tags: 
+- name: Listings
+
 info:
   version: v1.0
   title: RemoteOk Jobs API
   contact:
     email: support@remoteok.io
-  description: ''
+  description: >
+    Remotely interested in an a job? This is a JSON feed from RemoteOk.io with
+    all the latest jobs. You can't search by category or tag as far as we can
+    tell, but... you can sift through!
 
 servers:
   - url: 'https://remoteok.io/api'
@@ -14,7 +20,10 @@ servers:
 paths:
   /:
     get:
+      operationId: get-listings
       summary: All Listings
+      tags: 
+      - Listings
       responses:
         '200':
           description: OK
