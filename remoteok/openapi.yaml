@@ -1,0 +1,124 @@
+openapi: 3.0.3
+
+info:
+  version: v1.0
+  title: RemoteOk Jobs API
+  contact:
+    email: support@remoteok.io
+  description: ''
+
+servers:
+  - url: 'https://remoteok.io/api'
+    description: Production
+
+paths:
+  /:
+    get:
+      summary: All Listings
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegalOrListings'
+              example:
+                - legal: By using Remote OK's API feed you legally agree to mention Remote OK as a
+                    source and link back to the job listing URL on Remote OK with a DIRECT link, no
+                    redirects please. Please don't use our Remote OK and r|OK logo without written
+                    permission as they're registered trademarks. And thanks for using Remote OK! ^__^
+                - slug: 84864-remote-full-stack-software-engineer-deep-consulting-solutions
+                  id: '84864'
+                  epoch: '1588135875'
+                  date: '2020-04-28T21:51:15-07:00'
+                  company: Deep Consulting Solutions
+                  company_logo: https://remoteok.io/assets/jobs/b5ccf9a54729263861b85b962a420457.png
+                  position: Full Stack Software Engineer
+                  tags:
+                  - full stack
+                  - dev
+                  - engineer
+                  - digital nomad
+                  description: "(Remote, Full-Time, Anywhere in the World)We are looking for a skilled
+                    and passionate Full Stack Software Engineer to join our Tech Team to build and
+                    scale effective software solutions. We are in need of an enthusiastic&nbsp;self-starter
+                    with expertise in&nbsp;Node.js, React, and..."
+                  url: https://remoteok.io/remote-jobs/84864
+                - slug: 84862-remote-paid-research-study-for-mobile-developers-using-azure-cli-user-research-international
+                  id: '84862'
+                  epoch: '1588120876'
+                  date: '2020-04-28T17:41:16-07:00'
+                  company: User Research International
+                  company_logo: https://remoteok.io/assets/jobs/4301d029e86b6006eb6ea26980d7a504.png
+                  position: Paid Research Study For Mobile Developers Using Azure CLI
+                  tags:
+                  - mobile
+                  description: User Research International is a research company based out of Redmond,
+                    Washington. Working with some of the biggest companies in the industry, we aim
+                    to&nbsp;improve your experience via&nbsp;paid research studies. Whether it be
+                    the latest video game or productivity tools, we val...
+                  url: https://remoteok.io/remote-jobs/84862
+
+
+components:
+  schemas:
+    LegalOrListings:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/components/schemas/Legal'
+          - $ref: '#/components/schemas/Listing'
+    Listing:
+      type: object
+      additionalProperties: false
+      properties:
+        slug:
+          type: string
+        id:
+          type: string
+          format: integer
+        epoch:
+          type: string
+          format: integer
+        date:
+          type: string
+          format: date-time
+        company:
+          type: string
+        company_logo:
+          type: string
+        position:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: uri
+        logo:
+          type: string
+          format: uri
+        original:
+          type: boolean
+        verified:
+          type: boolean
+      required: 
+      - slug
+      - id
+      - epoch
+      - date
+      - company
+      - company_logo
+      - position
+      - tags
+      - description
+      - url
+    Legal:
+      type: object
+      additionalProperties: false
+      properties:
+        legal:
+          type: string
